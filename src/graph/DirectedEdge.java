@@ -12,13 +12,13 @@ public class DirectedEdge extends Edge{
      * @return the source
      * */
     public Vertex getSource() {
-        return this.source==0 ? this.getEnds()[1] : this.getEnds()[0];
+        return this.getEnds()[this.source];
     }
 
     /**
      * @return the Sink of the directed Edge
      *  */  
     public Vertex getSink() {
-        return this.source==0 ? this.getEnds()[0] : this.getEnds()[1];
+        return this.source==0 ? this.getEnds()[1] : this.getEnds()[0];
     }
 }
