@@ -1,0 +1,47 @@
+@startuml
+
+
+class Vertex {
+    -int id
+    -Object info
+    -String color
+}
+
+abstract class Edge {
+    -int id
+    -String color
+    -Vertex [2] ends
+    -double value
+    +Vertex[] getEnds()
+}
+
+class DirectedEdge extends Edge {
+    -int source
+    +Vertex getSource()
+    +Vertex getSink()
+
+}
+
+Interface Graph {
+    +int nbOfVertices()
+    +int nbOfEdges()
+    +void addVertex(Vertex)
+    +void addEdge(Edge)
+    +Boolean isConnected(Vertex, Vertex)
+    +Boolean isConnected()
+    +Edge[] getEdge(Vertex, Vertex)
+    +Edge[] getEdges()
+    +Vertex[] getVertices()
+    +Edge[] getNeighborEdges(Vertex)
+}
+
+
+class TestGraph {
+
+}
+
+Vertex o-left-|{ TestGraph
+DirectedEdge o-right-|{ TestGraph
+
+
+@enduml
