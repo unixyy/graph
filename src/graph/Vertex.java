@@ -16,6 +16,10 @@ public class Vertex {
         this.color = color;
     }
     
+    public int getId() {
+        return this.id;
+    }
+
     /**
      * @return the toString
      */
